@@ -1,11 +1,126 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import Reel from "../components/Reel.astro";
+import Services from "../components/Services.astro";
+import Contact from "../components/Contact.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="icon" type="image/x-icon" href="/butch-favicon-v2.ico?v=3" />
+  <link rel="shortcut icon" type="image/x-icon" href="/butch-favicon-v2.ico?v=3" />
+
+  <title>Butch Studio</title>
+</head>
+
+  <body>
+  <video
+  class="body-reel-bg"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="auto"
+  poster="/reel-poster.jpg"
+>
+  <source src="/BUTCH_WEB.mp4" type="video/mp4" />
+</video>
+
+    <div class="body-dark-layer"></div>
+
+    <Navbar />
+
+    <main>
+      <Hero />
+      <Reel />
+      <Services />
+      <Contact />
+    </main>
+<script>
+  const bgVideo = document.querySelector(".body-reel-bg");
+
+  if (bgVideo) {
+    bgVideo.muted = true;
+    bgVideo.playsInline = true;
+
+    const playVideo = () => {
+      bgVideo.play().catch(() => {});
+    };
+
+    document.addEventListener("touchstart", playVideo, { once: true });
+    document.addEventListener("click", playVideo, { once: true });
+  }
+</script>
+
+  </body>
+</html>
+
+<style is:global>
+  @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: #000;
+    color: white;
+    font-family: "Space Grotesk", sans-serif;
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+    font-family: "Space Grotesk", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a,
+  span,
+  button {
+    font-family: "Space Grotesk", sans-serif;
+  }
+
+  .body-reel-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -3;
+  opacity: 1;
+  filter: none;
+  pointer-events: none;
+}
+
+.body-dark-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+}
+
+  main {
+    position: relative;
+    z-index: 1;
+  }
+</style>

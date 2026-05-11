@@ -1,0 +1,167 @@
+<nav class="navbar">
+  <a class="logo" href="#home">
+    <img src="/butch-logo.png" alt="BUTCH" />
+  </a>
+
+  <button class="menu-button" type="button" aria-label="Abrir menú">
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="links">
+    <a href="#home">Home</a>
+    <a href="#reel">Reel</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<script>
+  const button = document.querySelector(".menu-button");
+  const links = document.querySelector(".links");
+
+  button?.addEventListener("click", () => {
+    links?.classList.toggle("open");
+    button.classList.toggle("open");
+  });
+
+  document.querySelectorAll(".links a").forEach((link) => {
+    link.addEventListener("click", () => {
+      links?.classList.remove("open");
+      button?.classList.remove("open");
+    });
+  });
+</script>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 7vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 28px;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.48);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .logo img {
+    width: clamp(190px, 20vw, 280px);
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(18px, 2.2vw, 38px);
+    white-space: nowrap;
+  }
+
+  .links a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: clamp(16px, 1.4vw, 22px);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    transition: all 0.25s ease;
+  }
+
+  .links a:hover {
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .menu-button {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 12px 20px;
+    }
+
+    .logo img {
+      width: 135px;
+    }
+
+    .menu-button {
+      display: flex;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.35);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .menu-button span {
+      width: 18px;
+      height: 2px;
+      background: white;
+      border-radius: 999px;
+      transition: transform 0.25s ease;
+    }
+
+    .menu-button.open span:first-child {
+      transform: translateY(4px) rotate(45deg);
+    }
+
+    .menu-button.open span:last-child {
+      transform: translateY(-4px) rotate(-45deg);
+    }
+
+    .links {
+      position: absolute;
+      top: 66px;
+      left: 20px;
+      right: 20px;
+      padding: 24px;
+      box-sizing: border-box;
+      border-radius: 22px;
+      background: rgba(0, 0, 0, 0.86);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-12px);
+      transition: all 0.25s ease;
+    }
+
+    .links.open {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .links a {
+      font-size: 20px;
+      letter-spacing: 0.03em;
+    }
+  }
+</style>

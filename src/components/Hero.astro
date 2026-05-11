@@ -1,0 +1,59 @@
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1>
+      AI Studio
+    </h1>
+
+    <p>
+      Making the impossible, real.
+    </p>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    padding: 0 7vw 70px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-end;
+    background: transparent;
+  }
+
+  .hero-content {
+    max-width: 920px;
+  }
+
+  h1 {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: clamp(42px, 5.6vw, 82px);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+    font-weight: 800;
+  }
+
+  p {
+    max-width: 980px;
+    margin: 28px 0 0;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: clamp(15px, 1.45vw, 21px);
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+  }
+
+  @media (max-width: 700px) {
+    .hero {
+      padding: 0 24px 52px;
+      align-items: flex-end;
+    }
+
+    h1 {
+      font-size: clamp(42px, 11vw, 58px);
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
+</style>

@@ -1,0 +1,213 @@
+<section id="contact" class="contact-section">
+  <div class="footer-panel">
+    <div class="top-line"></div>
+
+    <div class="footer-grid">
+      <div class="left">
+        <p>
+          @2026 Butch AI studio 
+        </p>
+
+        <p class="signature">Contact</p>
+        <p class="signature">Luis Moraga </p>
+        <a class="email-link" href="mailto:luis.moraga@butch.cl ">
+  lucho@butch.cl
+</a>
+      </div>
+
+      <div class="right">
+        <nav class="footer-nav">
+          <a href="#home">Home <span></span></a>
+          <a href="#reel">Reel <span></span></a>
+          <a href="#services">Services <span></span></a>
+          <a href="#contact">Contact <span></span></a>
+        </nav>
+
+<div class="socials">
+  <a class="social-icon whatsapp" href="https://wa.me/56992371257" target="_blank" aria-label="WhatsApp"></a>
+
+  <a class="social-icon instagram" href="https://www.instagram.com/butch.studio?igsh=MXd1enRpbnNtNzVjcw==" target="_blank" aria-label="Instagram"></a>
+
+  <a class="social-icon youtube" href="#" target="_blank" aria-label="YouTube"></a>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-section {
+    min-height: 70vh;
+    padding: 120px 6vw 48px;
+    box-sizing: border-box;
+    background: transparent;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .footer-panel {
+    width: 100%;
+    padding: 44px 0 0;
+    background: rgba(0, 0, 0, 0.58);
+    border-radius: 28px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .top-line {
+    width: calc(100% - 64px);
+    height: 1px;
+    margin: 0 auto 42px;
+    background: rgba(255, 255, 255, 0.62);
+  }
+
+  .footer-grid {
+    padding: 0 32px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 48px;
+  }
+
+.left p {
+  margin: 0;
+  max-width: 620px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(22px, 2vw, 30px);
+  line-height: 1.12;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.signature {
+  margin-top: 18px !important;
+  color: rgba(255, 255, 255, 0.72) !important;
+  font-size: clamp(14px, 1.2vw, 18px) !important;
+  line-height: 1.2 !important;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+  .right {
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 72px;
+  }
+
+ .footer-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: clamp(16px, 1.3vw, 22px);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.footer-nav a span {
+  color: #ff2a2a;
+  margin-left: 7px;
+}
+
+.footer-nav a:hover {
+  opacity: 0.68;
+  transform: translateX(-5px);
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  display: block;
+  background-color: #E0F450;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.social-icon:hover {
+  opacity: 0.85;
+  transform: translateY(-3px);
+}
+
+.whatsapp {
+  -webkit-mask-image: url("/whatsapp.svg");
+  mask-image: url("/whatsapp.svg");
+}
+
+.instagram {
+  -webkit-mask-image: url("/instagram.svg");
+  mask-image: url("/instagram.svg");
+}
+
+.youtube {
+  -webkit-mask-image: url("/youtube.svg");
+  mask-image: url("/youtube.svg");
+}
+
+
+.email-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #fcfcfcff;
+  text-decoration: none;
+  font-size: clamp(14px, 1.2vw, 18px);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.email-link:hover {
+  opacity: 0.75;
+  transform: translateY(-3px);
+}
+
+  @media (max-width: 800px) {
+    .contact-section {
+      padding: 100px 22px 32px;
+    }
+
+    .footer-panel {
+      border-radius: 22px;
+    }
+
+    .top-line {
+      width: calc(100% - 40px);
+    }
+
+    .footer-grid {
+      padding: 0 20px 24px;
+      flex-direction: column;
+    }
+
+    .right,
+    .footer-nav {
+      align-items: flex-start;
+    }
+
+    .socials {
+      justify-content: flex-start;
+    }
+  }
+</style>

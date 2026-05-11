@@ -1,0 +1,211 @@
+<section id="services" class="services-section">
+  <div class="section-label">
+    <h2>Services</h2>
+  </div>
+
+  <div class="services-gallery">
+    <article class="service-card">
+      <img  src="/AI PRODUCTION.png" alt="IA Production"  />
+      <div class="overlay"><h3>AI Production</h3></div>
+    </article>
+
+    <article class="service-card">
+      <img src="/AI INTERNAL VIDEO.png" alt="AI Internal Videos" />
+      <div class="overlay"><h3>AI Internal Videos</h3></div>
+    </article>
+
+    <article class="service-card">
+      <img  src="/AI PHOTOGRAPHIC CAMPAING.png" alt="AI Photographic Campaigns"/>
+      <div class="overlay"><h3>AI Photographic Campaigns</h3></div>
+    </article>
+
+    <article class="service-card">
+      <img src="/AI ANIMATIC.png" alt="AI Animatics" />
+      <div class="overlay"><h3>AI Animatics</h3></div>
+    </article>
+
+    <article class="service-card">
+      <img  src="/graphics.jpeg" alt="Motion Graphics" />
+      <div class="overlay"><h3>Motion Graphics</h3></div>
+    </article>
+
+    <article class="service-card">
+      <img   src="/3D.png" alt="3D"/>
+      <div class="overlay"><h3>3D</h3></div>
+    </article>
+
+    <article class="service-card">
+      <img  src="/VFX.png" alt="VFX" />
+      <div class="overlay"><h3>VFX</h3></div>
+    </article>
+
+    <article class="service-card">
+      <img  src="/AI VFX.png" alt="AI VFX" />
+      <div class="overlay"><h3>AI VFX</h3></div>
+    </article>
+  </div>
+</section>
+
+<style>
+  .services-section {
+    min-height: 76vh;
+    padding: 110px 6vw 70px;
+    box-sizing: border-box;
+    background: transparent;
+    color: white;
+  }
+
+  .section-label {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+  }
+
+  .section-label h2 {
+    margin: 0;
+    font-size: clamp(42px, 6vw, 86px);
+    line-height: 0.9;
+    letter-spacing: -0.06em;
+  }
+
+  .services-gallery {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+.service-card {
+  width: 100%;
+  min-width: 0;
+  position: relative;
+  height: clamp(180px, 18vw, 220px);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(224, 244, 80, 0.35);
+  animation: fadeUp 0.75s ease both;
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease;
+}
+.service-card:hover {
+  background: #E0F450;
+  border-color: #E0F450;
+  transform: translateY(-6px);
+}
+  .service-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transform: scale(1.03);
+    transition: transform 0.45s ease, filter 0.45s ease;
+  }
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #E0F450;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.service-card:hover::before {
+  opacity: 0.88;
+}
+  .service-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.58),
+      rgba(0, 0, 0, 0.02)
+    );
+    pointer-events: none;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    transition: all 0.45s ease;
+  }
+
+  .overlay h3 {
+    margin: 0;
+    color: white;
+    font-size: clamp(18px, 1.7vw, 30px);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+    font-weight: 700;
+    transition: all 0.45s ease;
+  }
+
+ .service-card:hover img {
+  transform: scale(1.08);
+  filter: grayscale(1) brightness(0.65) contrast(1.05);
+}
+
+  .service-card:hover .overlay {
+    align-items: center;
+    justify-content: center;
+  }
+
+ .service-card:hover .overlay h3 {
+  color: #000;
+  text-align: center;
+  transform: scale(1.08);
+}
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .services-gallery {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .service-card {
+      height: 240px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .services-section {
+      padding: 100px 22px 60px;
+    }
+
+    .section-label {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .services-gallery {
+      grid-template-columns: 1fr;
+    }
+
+    .service-card {
+      height: 240px;
+    }
+  }
+</style>
